@@ -94,4 +94,5 @@ def BlackJack():
 										elif replay == "N" or replay == "n":
 											print("Ok, bye!")
 											break
+							break
 BlackJack()
