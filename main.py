@@ -1,6 +1,6 @@
-import time
-import random
-import sys
+import random # Import random for random handouts
+import sys # Import sys for program exiting
+import hashlib # Import hashlib for hashing passwords for security
 
 def BlackJack():
 	while True:
@@ -112,8 +112,13 @@ def login_bet():
 		if str(password) == str(password_confirm):
 			chips = 1000
 
+			password.encode('utf-8')
+
+			passwd = hashlib.md5(password.encode('utf-8'))
+			passwd_hashed = passwd.hexdigest()
+
 			creation = open("Accounts.txt", "w")
-			creation.write("Username: {} | Password: {} | Chips: {}".format(username, password, chips))
+			creation.write("Username: {} | Password: {} | Chips: {}".format(username, passwd_hashed, chips))
 			creation.close()
 
 			print("Account Created Successfully!")
@@ -125,14 +130,17 @@ def login_bet():
 		username_login = input("Username: ")
 		password_login = input("Password: ")
 
+		checking_password = hashlib.md5()
+		checking_password.update(password_login)
+
 		creation = open("Accounts.txt", "r")
 		creation.read()
 
 		if username_login == creation:
-			if password_login == creation:
+			if checking_password == creation:
 				print("Login successful")
 				BlackJack()
-			elif password_login not in creation:
+			elif password_login != creation:
 				print("Incorrect password!")
 
 		elif username_login != creation:
