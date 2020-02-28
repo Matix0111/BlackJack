@@ -1,3 +1,8 @@
+'''
+Program Version: 1.0.2
+Developer: Brad Thompson
+Program: CLI-Based Black Jack
+'''
 import random # Import random for random handouts
 import sys # Import sys for program exiting
 import hashlib # Import hashlib for hashing passwords for security
