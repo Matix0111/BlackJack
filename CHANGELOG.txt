@@ -1,0 +1,10 @@
+Version 1.0.0
+  - Main core of BlackJack created
+
+Version 1.0.1
+  - BlackJack code updated
+  - Account creation and betting system to be added in the future
+
+Version 1.0.2
+  - Account creation mostly set up
+  - Betting system will be coming in the next update
