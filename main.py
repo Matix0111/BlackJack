@@ -5,7 +5,10 @@ Program: CLI-Based Black Jack
 '''
 import random # Import random for random handouts
 import sys # Import sys for program exiting
-import hashlib # Import hashlib for hashing passwords for security
+try:
+	import hashlib # Import hashlib for hashing passwords for security
+except ModuleNotFoundError:
+	print("Module 'hashlib' is not installed!")
 
 def BlackJack(): # Creating the BlackJack function
 	while True: # Starting infinite loop
@@ -129,7 +132,7 @@ def login_bet(): # Creating the account creation function !INCOMPLETE!
 			creation.write("Username: {} | Password: {} | Chips: {}".format(username, passwd_hashed, chips)) # Write the username, hashed password, and chip value
 			creation.close() # Close the file
 
-			print("Account Created Successfully!") # Announce successfull account creation 
+			print("Account Created Successfully!") # Announce successfull account creation
 
 		elif str(password) != str(password_confirm): # If the passwords do NOT match
 			print("Passwords do not match!") # Announce the passwords do NOT match
