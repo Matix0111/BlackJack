@@ -1,8 +1,11 @@
+#!/usr/bin/env python3
+
 '''
 Program Version: 1.0.2
 Developer: Brad Thompson
 Program: CLI-Based Black Jack
 '''
+
 import random # Import random for random handouts
 import sys # Import sys for program exiting
 try:
